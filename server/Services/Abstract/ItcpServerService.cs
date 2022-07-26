@@ -8,5 +8,6 @@ namespace server.Services.Abstract
 {
     public interface ItcpServerService
     {
+        Task<bool> startServer();
     }
 }
