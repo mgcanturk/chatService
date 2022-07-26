@@ -27,7 +27,6 @@ namespace client.Services.Concreate
                     try
                     {
                         socket.Connect(IPAddress.Loopback, 1920);
-                        Console.Clear();
                         Console.WriteLine("Connected. You can chat now.");
                         return true;
                     }
