@@ -24,7 +24,7 @@ namespace server.Services.Concreate
             bufferSize = 2048;//Size of receive buffer.  
             buffer = new byte[bufferSize];//Receive buffer.  
         }
-        public Task<bool> startServer()
+        public bool startServer()
         {
             try
             {
@@ -33,12 +33,12 @@ namespace server.Services.Concreate
                 socket.Listen(0);//Bind and listen on the given address
                 socket.BeginAccept(beginAcceptCallback, null);//Accept the incoming clients
                 Console.WriteLine("Server start complete.");
-                return Task.FromResult(true);
+                return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: {0}", ex.ToString());
-                return Task.FromResult(false);
+                return false;
             }
         }
         public void beginAcceptCallback(IAsyncResult ar)
