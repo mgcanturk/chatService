@@ -108,7 +108,7 @@ namespace server.Services.Concreate
                 {
                     sendMessage(handler, "[Server]: You are disconnected from server.");
                     clientList[clientIndex].isConnected = false;
-                    shutdownSocket(handler);
+                    handler.Close();
                     return false;
                 }
                 clientList[clientIndex].isMessageLimitExpired = true;
